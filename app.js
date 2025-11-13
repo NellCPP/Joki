@@ -26,7 +26,7 @@ function buildRankSteps() {
     DIVS.forEach(div => {
       for (let star = 1; star <= 5; star++) {
         steps.push({
-          label: ${group} ${div} ★${star},
+          label: `${group} ${div} ★${star}`,
           group
         });
       }
@@ -35,22 +35,22 @@ function buildRankSteps() {
 
   // Mythic 1–24
   for (let s = 1; s <= 24; s++) {
-    steps.push({ label: Mythic ★${s}, group: "Mythic" });
+    steps.push({ label: `Mythic ★${s}`, group: "Mythic" });
   }
 
   // Mythic Honor 25–49
   for (let s = 25; s <= 49; s++) {
-    steps.push({ label: Mythic Honor ★${s}, group: "Mythic Honor" });
+    steps.push({ label: `Mythic Honor ★${s}`, group: "Mythic Honor" });
   }
 
   // Mythic Glory 50–99
   for (let s = 50; s <= 99; s++) {
-    steps.push({ label: Mythic Glory ★${s}, group: "Mythic Glory" });
+    steps.push({ label: `Mythic Glory ★${s}`, group: "Mythic Glory" });
   }
 
   // Mythic Immortal 100–150
   for (let s = 100; s <= 150; s++) {
-    steps.push({ label: Mythic Immortal ★${s}, group: "Mythic Immortal" });
+    steps.push({ label: `Mythic Immortal ★${s}`, group: "Mythic Immortal" });
   }
 
   return steps;
@@ -116,7 +116,7 @@ function calc() {
   } else {
     const jamMin = Math.max(1, Math.round(steps * ETA_PER_STAR_HOUR));
     const jamMax = jamMin + 1;
-    etaEl.textContent = ${jamMin}–${jamMax} jam;
+    etaEl.textContent = `${jamMin}–${jamMax} jam`;
   }
 
   return { total, steps };
@@ -126,7 +126,7 @@ function calc() {
 //  INIT DROPDOWN & LEGEND
 // =======================
 function initSelects() {
-  const opts = RANK_STEPS.map(s => <option>${s.label}</option>).join("");
+  const opts = RANK_STEPS.map(s => `<option>${s.label}</option>`).join("");
   fromRank.innerHTML = opts;
   toRank.innerHTML   = opts;
 
@@ -179,7 +179,7 @@ async function sendToDatabase() {
 
     // optional: baca response (kalau mau)
     // const data = await res.json();
-    statusMsg.textContent = "✔ Berhasil dikirim!";
+    statusMsg.textContent = "✔️ Berhasil dikirim!";
     statusMsg.style.color = "#4ade80";
   } catch (err) {
     console.error(err);
