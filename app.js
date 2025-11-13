@@ -46,7 +46,7 @@ const legendEl = document.getElementById("legendList");
 const sendBtn = document.getElementById("sendBtn");
 const statusMsg = document.getElementById("statusMsg");
 
-const API_URL = "https://domainmu.com/api/joki"; // UBAH INI
+const API_URL = "https://script.google.com/macros/s/AKfycbxHAMnnq_Db2Xd19yD4V-hFzqoYc0sivkgdWSXLbE6JpowqE0EoJ5lLY9sjQUZlqnD-OA/exec"; // UBAH INI
 
 function format(n){return n.toLocaleString("id-ID");}
 function findIndex(label){return RANK_STEPS.findIndex(s=>s.label===label);}
